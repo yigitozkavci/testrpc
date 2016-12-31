@@ -24,7 +24,7 @@
     "ethereumjs-wallet": "~0.6.0",
     "fake-merkle-patricia-tree": "~1.0.1",
     "heap": "~0.2.6",
-    "merkle-patricia-tree": "~2.1.2",
+    "merkle-patricia-tree": "git+https://git@github.com/ethereumjs/merkle-patricia-tree.git#getWithRoot",
     "seedrandom": "~2.4.2",
     "shelljs": "~0.6.0",
     "solc": "0.4.6",
