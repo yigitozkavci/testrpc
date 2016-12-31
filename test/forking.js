@@ -488,6 +488,8 @@ describe("Forking", function() {
     }, function(err, results) {
       if (err) return done(err);
 
+      console.log('results', results)
+
       var codeEarliest = results.codeEarliest;
       var codeAfterFork = results.codeAfterFork;
       var codeLatest = results.codeLatest;
