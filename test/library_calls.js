@@ -4,6 +4,8 @@ var assert = require('assert');
 var solc = require("solc");
 
 var source = "\
+pragma solidity ^0.4.6; \
+\
 library Lib {\
   function something(int self) {\
     self = self + 1;\
@@ -17,7 +19,7 @@ contract Main {\
   function Main() {\
   }\
 \
-  function doSomething() {\
+  function doSomething() payable {\
     foo.something();\
   }\
 }\
@@ -99,7 +101,7 @@ var tests = function(web3, Main) {
           assert(difference < 1.0001,
                  'Amount spent should be (close to) 1 Ether, but is ' + difference);
           done();
-        }); 
+        });
       });
     });
 
@@ -116,7 +118,8 @@ var logger = {
 describe("Provider:", function() {
   var web3 = new Web3();
   web3.setProvider(TestRPC.provider({
-    logger: logger
+    logger: console,
+    verbose: true
   }));
   tests(web3);
 });
