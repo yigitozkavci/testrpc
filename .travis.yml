@@ -51,7 +51,6 @@ install:
   - npm install --build-from-source
   # test our module
   - npm test
-  - node lib/opencv.js
 
 before_script:
   - echo "Publishing native platform Binary Package? ->" $PUBLISH_BINARY
